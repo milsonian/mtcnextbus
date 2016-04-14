@@ -10,9 +10,11 @@ A simple go program that returns remaining time to next departing MTC bus or tra
 ## Usage
 
 mtcnextbus -route "*route name*" -stop "*stop name*" -direction "*cardinal direction*"
+
 Example:  `mtcnextbus -route "METRO Blue Line" -stop "Target Field Station Platform 1" -direction "north"`
 
 This returns e.g. `next departure: 34 Min (per schedule)` or an error if there are no remaining departures for that day.  `(Actual vehicle report)` indicates a real-time vehicle-GPS reported result.
+
 Note: This app depends on internet connectivity to the MTC NexTrip API to function (http://svc.metrotransit.org/)
 
 ## Development & Contributing

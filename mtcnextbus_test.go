@@ -61,7 +61,7 @@ func TestGetDeparture(t *testing.T) {
 	}
 	for _, c := range cases {
 		got, err := getDeparture(c.in, c.in2, c.in3)
-		if strings.Contains(got, c.want) == false {
+		if strings.Contains(got, c.want) == false && strings.Contains(got, "Due") == false {
 			if fmt.Sprintf("%s", err) != c.okerr {
 				t.Errorf("getDeparture(%q, %q, %q) == %q, want %q or err %q, error: %v", c.in, c.in2, c.in3, got, c.want, c.okerr, err)
 			}
