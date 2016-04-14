@@ -7,6 +7,10 @@ A simple go program that returns remaining time to next departing MTC bus or tra
 1. (Prerequisite) Install Go and configure GOPATH - see https://golang.org/dl/
 2. `go get github.com/milsonian/mtcnextbus` (or `go install` from project path if cloned)
 
+Alternatively, you can use Docker (Go development environment not required)
+1. (Prerequisite) Install Docker - see https://docs.docker.com/engine/installation/
+2. `docker pull milsonian/mtcnextbus` (optional, image will also pull at first run)
+
 ## Usage
 
 mtcnextbus -route "*route name*" -stop "*stop name*" -direction "*cardinal direction*"
@@ -16,6 +20,12 @@ Example:  `mtcnextbus -route "METRO Blue Line" -stop "Target Field Station Platf
 This returns e.g. `next departure: 34 Min (per schedule)` or an error if there are no remaining departures for that day.  `(Actual vehicle report)` indicates a real-time vehicle-GPS reported result.
 
 Note: This app depends on internet connectivity to the MTC NexTrip API to function (http://svc.metrotransit.org/)
+
+## Usage (Docker)
+
+docker run -it milsonian/mtcnextbus -route "*route name*" -stop "*stop name*" -direction "*cardinal direction*"
+
+Example: `docker run milsonian/mtcnextbus -route "METRO Blue Line" -stop "Target Field Station Platform 1" -direction "north"`
 
 ## Development & Contributing
 1. Install Go and configure GOPATH if you haven't - (step 1 of Installation above)
