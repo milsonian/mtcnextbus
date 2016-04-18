@@ -208,7 +208,7 @@ func main() {
 	flag.Parse()
 
 	if *routeFlag == "" || *stopFlag == "" || *directionFlag == "" {
-		fmt.Println("Usage:  mtcnextbus -route=\"\" -stop=\"\" -direction=\"\"  (see mtcnextbus -help for more)")
+		fmt.Println("Usage:  mtcnextbus -route \"\" -stop \"\" -direction \"\"  (see mtcnextbus -help for more)")
 		os.Exit(0)
 	}
 
